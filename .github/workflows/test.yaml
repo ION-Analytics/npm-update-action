@@ -1,10 +1,11 @@
 name: Test successful run
 on:
-  workflow_run:
+  workflow_dispatch: 
   push:
 
 jobs:
   Test-Success:
+    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the action codebase
