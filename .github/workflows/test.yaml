@@ -9,10 +9,8 @@ jobs:
     steps:
       - name: Checkout the action codebase
         uses: actions/checkout@v2
-      - name: wait what? ls
-        run: ls
       - name: Update!
-        uses: ./action.yaml
+        uses: oshdev/npm-update-action
       - name: Perform some test or something
         run: echo 'testing testing! 1! 2! 3!'
 
