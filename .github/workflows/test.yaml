@@ -10,7 +10,7 @@ jobs:
       - name: Checkout the action codebase
         uses: actions/checkout@v2
       - name: Update!
-        uses: oshdev/npm-update-action
+        uses: oshdev/npm-update-action@v1-beta
       - name: Perform some test or something
         run: echo 'testing testing! 1! 2! 3!'
 
