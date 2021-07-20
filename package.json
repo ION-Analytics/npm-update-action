@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@oshdev/npm-package-example": "^1.0.1"
+  },
   "engines": {
     "node": "12"
   },
