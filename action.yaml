@@ -8,10 +8,7 @@ branding:
   color: green
 
 runs:
-  using: composite
-  steps:
-    - name: Update dependenci¬es
-      run: echo 'such update! very new! wow!'
-      shell: bash
+  using: node12
+  main: src/main.js
+  post: src/post.js
   post-if: success()
-  post: echo git commit
