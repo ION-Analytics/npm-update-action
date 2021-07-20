@@ -1,0 +1,20 @@
+{
+  "name": "npm-update-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "engines": {
+    "node": "12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oshdev/npm-update-action.git"
+  },
+  "author": "Osh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oshdev/npm-update-action/issues"
+  },
+  "homepage": "https://github.com/oshdev/npm-update-action#readme"
+}
