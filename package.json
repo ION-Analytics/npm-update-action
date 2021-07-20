@@ -1,7 +1,7 @@
 {
   "name": "npm-update-action",
   "version": "1.0.0",
-  "description": "",
+  "description": "Update your Node dependencies with npm",
   "main": "index.js",
   "dependencies": {
     "@oshdev/npm-package-example": "^1.0.1"
