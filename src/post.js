@@ -1,3 +1,4 @@
 const { exec } = require("child_process");
 
-exec('echo git commit')
+exec('cat package.json')
+exec('cat package-lock.json')
