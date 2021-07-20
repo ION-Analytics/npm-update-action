@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout the action codebase
         uses: actions/checkout@v2
+      - name: wait what? ls
+        run: ll
       - name: Update!
         uses: ./action.yaml
       - name: Perform some test or something
