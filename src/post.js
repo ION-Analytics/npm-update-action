@@ -1,16 +1,7 @@
-const { exec } = require("child_process");
+const { handle } = require('./command-handler')
 
-const printOrError = (e, stdout, stderr) => {
-  if (e) {
-    console.error(e)
-    return
-  }
-  if (stderr) {
-    console.error(stderr)
-    return
-  }
-  console.log(stdout)
-}
-
-exec('cat package.json', printOrError)
-exec('cat package-lock.json', printOrError)
+;(async () => {
+  await handle('git', ['add', 'package.json', 'package-lock.json'])
+  await handle('git', ['commit', '--message', 'chore: update npm dependencies'])
+  // await handle('git', ['push'])
+})()
