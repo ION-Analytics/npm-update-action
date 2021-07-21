@@ -1,5 +1,9 @@
 const { handle } = require('./command-handler')
 
 ;(async () => {
-  await handle('npm', ['update'])
+  try {
+    await handle('npm', ['update'])
+  } catch (e) {
+    process.exit(typeof e === 'number' ? e : 1)
+  }
 })()
