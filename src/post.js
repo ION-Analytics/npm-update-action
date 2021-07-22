@@ -14,11 +14,17 @@ const { handle } = require('./lib')
     const email = 'osh-npm-updater@oshdev.com'
     const author = `${user} <${email}>`
     const message = 'chore: update npm dependencies' // @todo add list of dependencies
+    const config = ['-c', `user.email=${email}`, '-c', `user.name=${user}`]
 
-    await handle('git',
-      ['-c', 'user.email', email, '-c', 'user.name', user, 'commit', '--author', author, '--message', message])
-    await handle('git', ['push'])
+    await handle('git', [...config, 'commit', '--author', author, '-m', message])
+    await handle('git', [...config, 'push'])
   } catch (e) {
-    process.exit(typeof e === 'number' ? e : 1)
+    let code = 1
+    if (typeof e === 'number') {
+      code = e
+      e = new Error(`Command returned ${code} code`)
+    }
+    console.log(e)
+    process.exit(code)
   }
 })()
