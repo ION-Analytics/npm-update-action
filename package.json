@@ -3,9 +3,20 @@
   "version": "1.0.0",
   "description": "Update your Node dependencies with npm",
   "main": "src/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "rollup --config"
+  },
   "dependencies": {
     "@oshdev/npm-package-example": "^1.0.1",
     "npm-check-updates": "^11.8.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.2",
+    "bluebird": "^3.7.2",
+    "rollup": "^2.53.3"
   },
   "engines": {
     "node": "12"
