@@ -2,9 +2,16 @@ const { handle, update } = require('./lib')
 
 ;(async () => {
   try {
-    await update()
-    await handle('npm', ['install', '--no-scripts'])
+    const updated = await update()
+    if (updated === 0) process.exit(0)
+    await handle('npm', ['install', '--ignore-scripts'])
   } catch (e) {
-    process.exit(typeof e === 'number' ? e : 1)
+    let code = 1
+    if (typeof e === 'number') {
+      code = e
+      e = new Error(`Command returned ${code} code`)
+    }
+    console.log(e)
+    process.exit(code)
   }
 })()

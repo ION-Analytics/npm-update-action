@@ -9,9 +9,15 @@ const { handle } = require('./lib')
       process.exit(0)
     }
     await handle('git', ['add', 'package.json', 'package-lock.json'])
+
+    const user = 'osh-npm-updater'
+    const email = 'osh-npm-updater@oshdev.com'
+    const author = `${user} <${email}>`
+    const message = 'chore: update npm dependencies' // @todo add list of dependencies
+
     await handle('git',
-      ['commit', '--author', process.env['GITHUB_ACTOR'], '--message', 'chore: update npm dependencies'])
-    // await handle('git', ['push'])
+      ['-c', 'user.email', email, '-c', 'user.name', user, 'commit', '--author', author, '--message', message])
+    await handle('git', ['push'])
   } catch (e) {
     process.exit(typeof e === 'number' ? e : 1)
   }
