@@ -4,7 +4,7 @@
   "description": "Update your Node dependencies with npm",
   "main": "src/main.js",
   "dependencies": {
-    "@oshdev/npm-package-example": "^1.0.1"
+    "@oshdev/npm-package-example": "^1.1.0"
   },
   "engines": {
     "node": "12"
