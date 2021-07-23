@@ -2,6 +2,8 @@ name: Test successful run
 on:
   workflow_dispatch: 
   push:
+    tags:
+      - *
 
 jobs:
   Test-Success:
