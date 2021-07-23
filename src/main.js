@@ -1,7 +1,5 @@
 const { handle } = require('./lib')
 
-console.log('version', process.version)
-
 ;(async () => {
   try {
     await handle('npm', ['install', '--ignore-scripts'])
