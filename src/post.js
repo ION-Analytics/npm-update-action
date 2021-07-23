@@ -1,4 +1,4 @@
-const { handle } = require('./lib')
+const { handle, handleError } = require('./lib')
 
 ;(async () => {
   try {
@@ -19,12 +19,6 @@ const { handle } = require('./lib')
     await handle('git', [...config, 'commit', '--author', author, '-m', message])
     await handle('git', [...config, 'push'])
   } catch (e) {
-    let code = 1
-    if (typeof e === 'number') {
-      code = e
-      e = new Error(`Command returned ${code} code`)
-    }
-    console.log(e)
-    process.exit(code)
+    handleError(e)
   }
 })()
