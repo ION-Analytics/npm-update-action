@@ -1,5 +1,7 @@
 const { handle, update } = require('./lib')
 
+console.log('version', process.version)
+
 ;(async () => {
   try {
     const updated = await update()
