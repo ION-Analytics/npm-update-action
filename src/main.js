@@ -1,11 +1,9 @@
-const { handle, update } = require('./lib')
+const { handle } = require('./lib')
 
 console.log('version', process.version)
 
 ;(async () => {
   try {
-    const updated = await update()
-    if (updated === 0) process.exit(0)
     await handle('npm', ['install', '--ignore-scripts'])
   } catch (e) {
     let code = 1
