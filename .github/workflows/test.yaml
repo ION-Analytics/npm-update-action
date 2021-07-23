@@ -12,17 +12,17 @@ jobs:
       - name: Checkout the action codebase
         uses: actions/checkout@v2
       - name: Update!
-        uses: oshdev/npm-update-action@v1-beta11
+        uses: oshdev/npm-update-action@v1
       - name: Perform some test or something
         run: echo 'testing testing! 1! 2! 3!'
 
   Test-Failure:
-    continue-on-error: true
+    continue-on-error: true # Do not add this to your pipeline - this is just so
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the action codebase
         uses: actions/checkout@v2
       - name: Update!
-        uses: oshdev/npm-update-action@v1-beta11
+        uses: oshdev/npm-update-action@v1
       - name: Perform some test or something
         run: echo 'failing! 1! 2! 3!' && exit 1
